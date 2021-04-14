@@ -30,6 +30,34 @@ Park.prototype.findMostPopularDinosaur = function(){
     }
 }
 
+Park.prototype.findDinosaursOfSpecies = function(species){
+    let dinoList = [];
+    for (let dinosaur of this.collectionOfDinosaurs){
+        if ( dinosaur.species === species)
+            dinoList.push(dinosaur.species)
+    
+    }
+    return dinoList
+}
+
+Park.prototype.totalVisitors = function(){
+    let totalVisitors = 0
+    for (let dinosaur of this.collectionOfDinosaurs){
+        totalVisitors += dinosaur.guestsAttractedPerDay;
+    
+    }
+    return totalVisitors
+}
+
+Park.prototype.totalVisitorsPerAnnum = function(){
+    totalVisitorsPerAnnum = this.totalVisitors() * 365;
+    return totalVisitorsPerAnnum
+}
+
+Park.prototype.totalRevenue = function(ticketPrice){
+    totalRevenue = this.totalVisitorsPerAnnum() * ticketPrice;
+    return totalRevenue
+}
 
 
 
