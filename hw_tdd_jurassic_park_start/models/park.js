@@ -8,14 +8,13 @@ Park.prototype.addDinosaur = function(dinosaur){
     this.collectionOfDinosaurs.push(dinosaur);
 }
 
-// Park.prototype.removeDinosaur = function(dinosaur){
-//     position = this.collectionOfDinosaurs.indexOf(dinosaur);
-//     this.collectionOfDinosaurs.splice(position, 1);
-// }
 
-Park.prototype.removeDinosaur = function(){
-    this.collectionOfDinosaurs.pop();
+Park.prototype.removeDinosaur = function(dinosaur){
+    selected = dinosaur
+    position = this.collectionOfDinosaurs.indexOf(selected);
+    this.collectionOfDinosaurs.splice(position, 1);
 }
+
 
 Park.prototype.findMostPopularDinosaur = function(){
     let visitorNumbers = [];
